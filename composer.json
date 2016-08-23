@@ -1,0 +1,15 @@
+{
+    "name": "sm-alfariz/indonesian-date-format",
+    "description": "Indonesia date Format lib",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Efendi hariyadi",
+            "email": "efendi.hariyadi@numesa.co.id"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
+
