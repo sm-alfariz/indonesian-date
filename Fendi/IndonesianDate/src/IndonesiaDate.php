@@ -1,9 +1,9 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Fendi
+ * @author EFendi Hariyadi
  * Date: 24/08/16
  * Time: 18:53
+ * 
  */
 
 namespace Fendi\IndonesianDate;
@@ -104,20 +104,22 @@ class IndonesiaDate
         return true;
     }
 
-    public function hitung_mundur($wkt)
+    public function humanDif($wkt)
     {
-        $waktu = array(365 * 24 * 60 * 60 => "tahun",
-            30 * 24 * 60 * 60 => "bulan",
-            7 * 24 * 60 * 60 => "minggu",
-            24 * 60 * 60 => "hari",
-            60 * 60 => "jam",
-            60 => "menit",
-            1 => "detik");
+        $waktu = array(
+            31536000 => 'tahun',
+            2592000 => 'bulan',
+            604800 => 'minggu',
+            86400 => 'hari',
+            3600 => 'jam',
+            //60 => 'menit',
+            //1 => 'detik'
+        );
 
         $hitung = strtotime(gmdate("Y-m-d H:i:s", time() + 60 * 60 * 8)) - $wkt;
         $hasil = array();
         if ($hitung < 5) {
-            $hasil = 'kurang dari 5 detik yang lalu';
+            $hasil = date("d/m/Y",$wkt) ;//'kurang dari 5 detik yang lalu';
         } else {
             $stop = 0;
             foreach ($waktu as $periode => $satuan) {
