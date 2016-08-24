@@ -10,4 +10,6 @@ require_once __DIR__ . '/../vendor/autoload.php';
 use IndonesiaDate;
 echo indonesiaDate(date("Y-m-d")); //echo current date in indonosian format
 echo $tgl->blogDate(date("Y-m-d")); //echo blog date style in indonosian format
+$time = strtotime('2016-08-22 21:25:43');
+echo $tgl->humanDif($time);  //result 4 hari yang lalu
 ```
