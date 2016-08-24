@@ -1,8 +1,13 @@
 {
     "name": "sm-alfariz/indonesian-date-format",
     "description": "Indonesia date Format lib",
-    "type": "library",
     "license": "MIT",
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/sm-alfariz/indonesian-date"
+        }
+    ],
     "authors": [
         {
             "name": "Efendi hariyadi",
@@ -17,7 +22,8 @@
     },
     "autoload": {
         "psr-4": {
-            "Fendi\\IndonesianDate\\": "Fendi/IndonesianDate/src/"
+            "Fendi\\IndonesianDate\\": "Fendi/IndonesianDate/src/",
+            "Test\\": "tests/"
         }
     }
 }
