@@ -1,11 +1,5 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: fendi
- * Date: 25/08/16
- * Time: 1:56
- */
 namespace Test;
 
 use Fendi\IndonesianDate\IndonesiaDate;
