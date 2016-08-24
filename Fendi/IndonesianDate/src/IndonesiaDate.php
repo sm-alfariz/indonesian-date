@@ -1,7 +1,7 @@
 <?php
 /**
  * @autor eFendi hAriyadi
- * Date: 24/08/16
+ * @createDate: 24/08/16
  * Time: 18:53
  */
 
@@ -20,11 +20,19 @@ class IndonesiaDate
 
     }
 
+    /**
+     * @param $tgl \DateTime
+     * @return string
+     */
     public function blogDate($tgl)
     {
         return $this->nama_hari($tgl) . ', ' . $this->indonesiaDate($tgl);
     }
 
+    /**
+     * @param $tgl \DateTime
+     * @return string
+     */
     public function nama_hari($tgl)
     {
         $ubah = gmdate($tgl, time()+60*60*8);
@@ -45,6 +53,10 @@ class IndonesiaDate
         return $nama_hari;
     }
 
+    /**
+     * @param $tgl \DateTime
+     * @return string
+     */
     public function indonesiaDate($tgl)
     {
         $this->ubah = gmdate($tgl, time() + 60 * 60 * 8);
@@ -57,7 +69,7 @@ class IndonesiaDate
 
     /**
      * @param mixed $bulan
-     * @return
+     * @return mixed
      */
     public function setBulan($bulan)
     {
@@ -103,6 +115,10 @@ class IndonesiaDate
         return true;
     }
 
+    /**
+     * @param $time
+     * @return string
+     */
     public function humanDifSimple($time)
     {
 
@@ -126,6 +142,10 @@ class IndonesiaDate
 
     }
 
+    /**
+     * @param $wkt
+     * @return array|string
+     */
     public function humanDif($wkt)
     {
         $waktu = array(
