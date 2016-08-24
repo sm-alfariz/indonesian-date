@@ -21,19 +21,11 @@ class IndonesiaDate
 
     }
 
-    public function indonesiaDate($tgl)
-    {
-        $this->ubah = gmdate($tgl,time()+60*60*8);
-        $this->pecah = explode("-",$this->ubah);
-        $this->tanggal = $this->pecah[2];
-        $this->bulan = $this->setBulan($this->pecah[1]);
-        $this->tahun = $this->pecah[0];
-        return $this->tanggal.' '.$this->bulan.' '.$this->tahun;
-    }
     public function blogDate($tgl)
     {
-        return $this->nama_hari($tgl).' ,'.$this->indonesiaDate($tgl);
+        return $this->nama_hari($tgl) . ', ' . $this->indonesiaDate($tgl);
     }
+
     public function nama_hari($tgl)
     {
         $ubah = gmdate($tgl, time()+60*60*8);
@@ -54,40 +46,14 @@ class IndonesiaDate
         return $nama_hari;
     }
 
-    public function hitung_mundur($wkt)
+    public function indonesiaDate($tgl)
     {
-        $waktu=array(   365*24*60*60    => "tahun",
-            30*24*60*60     => "bulan",
-            7*24*60*60      => "minggu",
-            24*60*60        => "hari",
-            60*60           => "jam",
-            60              => "menit",
-            1               => "detik");
-
-        $hitung = strtotime(gmdate ("Y-m-d H:i:s", time () +60 * 60 * 8))-$wkt;
-        $hasil = array();
-        if($hitung<5)
-        {
-            $hasil = 'kurang dari 5 detik yang lalu';
-        }
-        else
-        {
-            $stop = 0;
-            foreach($waktu as $periode => $satuan)
-            {
-                if($stop>=6 || ($stop>0 && $periode<60)) break;
-                $bagi = floor($hitung/$periode);
-                if($bagi > 0)
-                {
-                    $hasil[] = $bagi.' '.$satuan;
-                    $hitung -= $bagi*$periode;
-                    $stop++;
-                }
-                else if($stop>0) $stop++;
-            }
-            $hasil=implode(' ',$hasil).' yang lalu';
-        }
-        return $hasil;
+        $this->ubah = gmdate($tgl, time() + 60 * 60 * 8);
+        $this->pecah = explode("-", $this->ubah);
+        $this->tanggal = $this->pecah[2];
+        $this->bulan = $this->setBulan($this->pecah[1]);
+        $this->tahun = $this->pecah[0];
+        return $this->tanggal . ' ' . $this->bulan . ' ' . $this->tahun;
     }
 
     /**
@@ -136,5 +102,35 @@ class IndonesiaDate
                 break;
         }
         return true;
+    }
+
+    public function hitung_mundur($wkt)
+    {
+        $waktu = array(365 * 24 * 60 * 60 => "tahun",
+            30 * 24 * 60 * 60 => "bulan",
+            7 * 24 * 60 * 60 => "minggu",
+            24 * 60 * 60 => "hari",
+            60 * 60 => "jam",
+            60 => "menit",
+            1 => "detik");
+
+        $hitung = strtotime(gmdate("Y-m-d H:i:s", time() + 60 * 60 * 8)) - $wkt;
+        $hasil = array();
+        if ($hitung < 5) {
+            $hasil = 'kurang dari 5 detik yang lalu';
+        } else {
+            $stop = 0;
+            foreach ($waktu as $periode => $satuan) {
+                if ($stop >= 6 || ($stop > 0 && $periode < 60)) break;
+                $bagi = floor($hitung / $periode);
+                if ($bagi > 0) {
+                    $hasil[] = $bagi . ' ' . $satuan;
+                    $hitung -= $bagi * $periode;
+                    $stop++;
+                } else if ($stop > 0) $stop++;
+            }
+            $hasil = implode(' ', $hasil) . ' yang lalu';
+        }
+        return $hasil;
     }
 }
