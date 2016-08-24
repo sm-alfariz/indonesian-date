@@ -1,10 +1,13 @@
 <?php
 /**
- * Indonesian Date Manipulation class
- * @author      Efendi Hariyadi <efendi.hariyadi@gmail.com>
- * @created     24/08/16
+ * Created by PhpStorm.
+ * User: fendi
+ * Date: 24/08/16
+ * Time: 18:53
  */
-namespace IndonesiaDate;
+
+namespace fend\indonesiandate;
+
 class IndonesiaDate
 {
     protected $ubah; //change
@@ -132,5 +135,6 @@ class IndonesiaDate
                 return "Desember";
                 break;
         }
+        return true;
     }
 }
