@@ -1,7 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: Fendi
+ * @autor eFendi hAriyadi
  * Date: 24/08/16
  * Time: 18:53
  */
