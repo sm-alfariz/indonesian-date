@@ -11,10 +11,10 @@ namespace Test;
 use Fendi\IndonesianDate\IndonesiaDate;
 use PHPUnit_Framework_TestCase;
 
-class TestIndonesianDate extends \PHPUnit_Framework_TestCase
+class IndonesianDateTest extends \PHPUnit_Framework_TestCase
 {
 
-    public function testTrueIsTrue()
+    public function testDateVar()
     {
         $dt = new IndonesiaDate;
         if (count($dt)) {
