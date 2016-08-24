@@ -1,12 +1,12 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: fendi
+ * User: Fendi
  * Date: 24/08/16
  * Time: 18:53
  */
 
-namespace fend\indonesiandate;
+namespace Fendi\IndonesianDate;
 
 class IndonesiaDate
 {
