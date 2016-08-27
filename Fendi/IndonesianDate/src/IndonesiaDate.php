@@ -27,6 +27,7 @@ class IndonesiaDate
      */
     public function blogDate($tgl)
     {
+        $tgl = date('Y-m-d', strtotime($tgl));
         return $this->nama_hari($tgl) . ', ' . $this->indonesiaDate($tgl);
     }
 
@@ -36,6 +37,7 @@ class IndonesiaDate
      */
     public function nama_hari($tgl)
     {
+
         $ubah = gmdate($tgl, time()+60*60*8);
         $pecah = explode("-",$ubah);
         $tgl = $pecah[2];
@@ -60,6 +62,7 @@ class IndonesiaDate
      */
     public function indonesiaDate($tgl)
     {
+        $tgl = date('Y-m-d', strtotime($tgl));
         $this->ubah = gmdate($tgl, time() + 60 * 60 * 8);
         $this->pecah = explode("-", $this->ubah);
         $this->tanggal = $this->pecah[2];
