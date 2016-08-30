@@ -125,7 +125,7 @@ class IndonesiaDate
      */
     public function humanDifSimple($time)
     {
-
+        $time = strtotime($time);
         $time = time() - $time; // to get the time since that moment
         $time = ($time < 1) ? 1 : $time;
         $tokens = array(
@@ -152,6 +152,7 @@ class IndonesiaDate
      */
     public function humanDif($wkt)
     {
+        $wkt = strtotime($wkt);
         $waktu = array(
             31536000 => 'tahun',
             2592000 => 'bulan',
