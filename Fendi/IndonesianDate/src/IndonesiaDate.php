@@ -75,7 +75,7 @@ class IndonesiaDate
      * @param mixed $bulan
      * @return mixed
      */
-    public function setBulan($bulan)
+    public static function setBulan($bulan)
     {
         switch ($bulan)
         {
