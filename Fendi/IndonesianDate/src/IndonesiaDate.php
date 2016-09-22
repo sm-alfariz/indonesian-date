@@ -25,10 +25,10 @@ class IndonesiaDate
      * @param $tgl \DateTime
      * @return string
      */
-    public function blogDate($tgl)
+    public static function blogDate($tgl)
     {
         $tgl = date('Y-m-d', strtotime($tgl));
-        return $this->nama_hari($tgl) . ', ' . $this->indonesiaDate($tgl);
+        return self::nama_hari($tgl) . ', ' . self::indonesiaDate($tgl);
     }
 
     /**
