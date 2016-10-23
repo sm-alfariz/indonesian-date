@@ -10,11 +10,11 @@ namespace Fendi\IndonesianDate;
 
 class IndonesiaDate
 {
-    protected $ubah; //change
-    protected $pecah; //explode
-    protected $bulan; //as month
-    protected $tanggal; //as date
-    protected $tahun; //as year
+    protected static $ubah; //change
+    protected static $pecah; //explode
+    protected static $bulan; //as month
+    protected static $tanggal; //as date
+    protected static $tahun; //as year
 
     public function __construct()
     {
@@ -25,17 +25,17 @@ class IndonesiaDate
      * @param $tgl \DateTime
      * @return string
      */
-    public function blogDate($tgl)
+    public static function blogDate($tgl)
     {
         $tgl = date('Y-m-d', strtotime($tgl));
-        return $this->nama_hari($tgl) . ', ' . $this->indonesiaDate($tgl);
+        return self::nama_hari($tgl) . ', ' . self::indonesiaDate($tgl);
     }
 
     /**
      * @param $tgl \DateTime
      * @return string
      */
-    public function nama_hari($tgl)
+    public static function nama_hari($tgl)
     {
 
         $ubah = gmdate($tgl, time()+60*60*8);
@@ -60,22 +60,22 @@ class IndonesiaDate
      * @param $tgl \DateTime
      * @return string
      */
-    public function indonesiaDate($tgl)
+    public static function indonesiaDate($tgl)
     {
         $tgl = date('Y-m-d', strtotime($tgl));
-        $this->ubah = gmdate($tgl, time() + 60 * 60 * 8);
-        $this->pecah = explode("-", $this->ubah);
-        $this->tanggal = $this->pecah[2];
-        $this->bulan = $this->setBulan($this->pecah[1]);
-        $this->tahun = $this->pecah[0];
-        return $this->tanggal . ' ' . $this->bulan . ' ' . $this->tahun;
+        self::$ubah = gmdate($tgl, time() + 60 * 60 * 8);
+        self::$pecah = explode("-", self::$ubah);
+        self::$tanggal = self::$pecah[2];
+        self::$bulan = self::setBulan(self::$pecah[1]);
+        self::$tahun = self::$pecah[0];
+        return self::$tanggal . ' ' . self::$bulan . ' ' . self::$tahun;
     }
 
     /**
      * @param mixed $bulan
      * @return mixed
      */
-    public function setBulan($bulan)
+    public static function setBulan($bulan)
     {
         switch ($bulan)
         {
