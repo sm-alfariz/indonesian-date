@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sm-alfariz/indonesian-date.svg?branch=master)](https://travis-ci.org/sm-alfariz/indonesian-date)
+
 # indonesian-date-format
 Indonesia (ID) date format
 ##instalation
